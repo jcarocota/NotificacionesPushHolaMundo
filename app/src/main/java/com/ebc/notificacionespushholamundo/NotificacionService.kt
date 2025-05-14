@@ -52,12 +52,18 @@ class NotificacionService(private  val context: Context) {
     }
 
     fun lanzarNotificacionImagen() {
-        //val imagen = context.
+        val imagen = BitmapFactory.decodeResource(context.resources, R.drawable.gato)
         val notificacion = NotificationCompat.Builder(context, ID_MAIN_CHANNEL)
-            .setContentTitle("Notificación básica")
-            .setContentText("Cuerpo de la notificacion")
-            .setSmallIcon(R.drawable.happy_face)
+            .setContentTitle("Notificación imagen")
+            .setContentText("Imagen del Maxi")
+            .setSmallIcon(R.drawable.gato)
             .setPriority(NotificationCompat.PRIORITY_HIGH)
+            .setLargeIcon(imagen)
+            .setStyle(
+                NotificationCompat
+                    .BigPictureStyle()
+                    .bigPicture(imagen)
+            )
             .setAutoCancel(true)
             .build()
 

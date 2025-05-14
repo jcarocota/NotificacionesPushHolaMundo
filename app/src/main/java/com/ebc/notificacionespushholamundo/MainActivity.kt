@@ -104,7 +104,7 @@ fun BotonesPrueba(modifier: Modifier = Modifier) {
         Spacer(modifier = Modifier.height(15.dp))
 
         Button(
-            onClick = {}
+            onClick = {notificacionService.lanzarNotificacionImagen()}
         ) {
             Text("Notificación Imagen")
         }
